@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="900.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anbar.controller.MainController">
+   <center>
+      <VBox alignment="TOP_RIGHT" prefHeight="571.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="47.0" prefWidth="694.0">
+               <children>
+                  <Button fx:id="btnDepot" mnemonicParsing="false" onAction="#loadDepot" prefHeight="35.0" prefWidth="110.0" styleClass="background" text="Anbar" textFill="#fff9f9" textOverrun="CLIP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#00000091" />
+                     </effect>
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCar" mnemonicParsing="false" onAction="#loadCar" prefHeight="35.0" prefWidth="110.0" styleClass="background" text="Maşın" textFill="#fff9f9" textOverrun="CLIP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#00000091" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="log" mnemonicParsing="false" onAction="#loadLog" prefHeight="35.0" prefWidth="110.0" styleClass="background" text="Hesabat" textFill="#fff9f9" textOverrun="CLIP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#00000091" />
+                     </effect>
+                     <HBox.margin>
+                        <Insets left="230.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="productTable" prefHeight="363.0" prefWidth="480.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="colProductId" maxWidth="700.0" prefWidth="20.0" text="ID" />
+                <TableColumn fx:id="colProductName" maxWidth="4000.0" prefWidth="75.0" text="Məhsulun adı" />
+                  <TableColumn fx:id="colProductNum" maxWidth="4000.0" prefWidth="75.0" text="Sayı" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="571.0" prefWidth="306.0" spacing="10.0" styleClass="background" stylesheets="@style/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Əməliyatlar" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="95.0" top="40.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="255.0" spacing="15.0">
+               <children>
+                  <RadioButton fx:id="depotOption" mnemonicParsing="false" selected="true" text="Anbar" textFill="WHITE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="option" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="carOption" mnemonicParsing="false" text="Maşın" textFill="WHITE" toggleGroup="$option">
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <TextField fx:id="productName" prefHeight="40.0" prefWidth="246.0" promptText="Məhsulun adı">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="25.0" right="25.0" />
+               </VBox.margin></TextField>
+            <HBox prefHeight="50.0" prefWidth="296.0">
+               <children>
+                  <TextField fx:id="productNum" prefHeight="40.0" prefWidth="149.0" promptText="Sayı">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="plus" mnemonicParsing="false" onAction="#addProduct" prefHeight="40.0" prefWidth="38.0" text="+">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="minus" mnemonicParsing="false" onAction="#takeProduct" prefHeight="40.0" prefWidth="38.0" text="-">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="errorMessage" textFill="#f2000c">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="146.0" prefWidth="296.0">
+               <children>
+                  <Button fx:id="save" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#save" prefHeight="35.0" prefWidth="190.0" styleClass="btnGreen" text="Yadda saxla" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="delete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="190.0" styleClass="btnRed" text="Siyahıdan sil" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="reset" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: white;" text="Ləğv et">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#1965d0" />
+                     </effect>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>

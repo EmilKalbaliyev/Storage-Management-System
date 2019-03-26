@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="248.0" prefWidth="400.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anbar.controller.AddController">
+   <children>
+      <Rectangle fill="DODGERBLUE" height="261.0" stroke="#ffffff8b" strokeType="INSIDE" width="400.0" />
+      <Label fx:id="lblLogin" layoutX="90.0" layoutY="14.0" text="Anbara əlavə et" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productNum" layoutX="98.0" layoutY="119.0" prefHeight="36.0" prefWidth="204.0" promptText="Sayı" />
+      <Button fx:id="save" layoutX="193.0" layoutY="181.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="113.0" styleClass="btnGreen" text="Yadda saxla" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" />
+         </effect></Button>
+      <Button fx:id="cancel" layoutX="98.0" layoutY="181.0" mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: white;" text="Ləğv et">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#1965d0" />
+         </effect>
+      </Button>
+      <HBox alignment="CENTER_LEFT" layoutX="73.0" layoutY="151.0" prefHeight="30.0" prefWidth="255.0" spacing="15.0" />
+      <Label fx:id="lblLogin1" layoutX="32.0" layoutY="82.0" text="Adı:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLogin11" layoutX="29.0" layoutY="124.0" text="Sayı:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="productName" layoutX="99.0" layoutY="81.0" text="Adı:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
